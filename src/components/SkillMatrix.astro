@@ -1,0 +1,82 @@
+---
+// SkillMatrix.astro
+interface SkillCategory {
+  title: string;
+  description: string;
+  items: Array<{
+    name: string;
+    details?: string;
+  }>;
+}
+
+const skillCategories: SkillCategory[] = [
+  {
+    title: 'Quality Engineering & SDET Architecture',
+    description: 'Automated test frameworks, distributed load simulations, CI quality gates, and observability.',
+    items: [
+      { name: 'k6 / Distributed Load Testing', details: 'Scenario generation, SLA latency budgets' },
+      { name: 'Cypress & Playwright', details: 'End-to-end resilient web testing suites' },
+      { name: 'Appium & Espresso', details: 'Native Android/iOS automation grids' },
+      { name: 'RestAssured & Pact', details: 'Contract testing & microservice mocks' },
+      { name: 'Test Infrastructure & CI/CD', details: 'GitHub Actions, GitLab CI, Dockerized test runners' },
+    ],
+  },
+  {
+    title: 'Backend Systems & Omnichannel Architecture',
+    description: 'High-throughput order processing, event-driven pipelines, idempotent state machines, and microservices.',
+    items: [
+      { name: 'Go (Golang)', details: 'High-concurrency services, event consumers, CLI tools' },
+      { name: 'Node.js / TypeScript', details: 'REST/GraphQL APIs, backend tooling, automation' },
+      { name: 'Java / Spring Boot', details: 'Enterprise core banking integrations, ISO8583' },
+      { name: 'Redis & Redis Cluster', details: 'Distributed locking, deduplication, caching' },
+      { name: 'PostgreSQL & MySQL', details: 'Schema design, transaction boundaries, tuning' },
+      { name: 'RabbitMQ & Kafka', details: 'Asynchronous event streaming, DLQ routing' },
+    ],
+  },
+  {
+    title: 'Infrastructure, DevOps & Tooling',
+    description: 'Container orchestration, monitoring telemetry, infrastructure as code, and developer workflow automation.',
+    items: [
+      { name: 'Docker & Containerization', details: 'Multi-stage builds, isolated test environments' },
+      { name: 'Kubernetes (K8s)', details: 'Deployments, configmaps, pod autoscaling' },
+      { name: 'Prometheus & Grafana', details: 'SLO/SLA dashboards, alertmanager metrics' },
+      { name: 'Linux / Bash Scripting', details: 'System automation, kernel tuning, networking' },
+      { name: 'Git & Trunk-based Flow', details: 'Code review discipline, semantic releases' },
+    ],
+  },
+];
+---
+
+<div class="space-y-6">
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-5">
+    {
+      skillCategories.map((category) => (
+        <div class="p-5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622]/80 flex flex-col justify-between">
+          <div>
+            <h3 class="text-sm font-semibold font-mono text-slate-900 dark:text-slate-100 pb-2 border-b border-slate-100 dark:border-slate-800">
+              {category.title}
+            </h3>
+            <p class="text-xs text-slate-500 dark:text-slate-400 mt-2 mb-4 leading-relaxed">
+              {category.description}
+            </p>
+            <ul class="space-y-2.5">
+              {category.items.map((skill) => (
+                <li class="text-xs">
+                  <div class="font-mono font-medium text-slate-800 dark:text-slate-200 flex items-center gap-1.5">
+                    <span class="w-1 h-1 rounded-full bg-blue-500"></span>
+                    <span>{skill.name}</span>
+                  </div>
+                  {skill.details && (
+                    <div class="text-[11px] text-slate-500 dark:text-slate-400 pl-2.5 font-sans mt-0.5">
+                      {skill.details}
+                    </div>
+                  )}
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</div>

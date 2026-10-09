@@ -1,0 +1,118 @@
+---
+// src/pages/about.astro
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+  title="About & Engineering Narrative"
+  description="Background, technical philosophy, and engineering leadership trajectory of Zul Yatman across e-commerce, banking, video streaming, and retail."
+>
+  <div class="max-w-3xl mx-auto space-y-12">
+    
+    <!-- Page Header -->
+    <header class="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <div class="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+        Background & Philosophy
+      </div>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+        Bridging Systems Engineering & Software Quality Architecture
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+        A senior software engineer and QA automation architect with over a decade of hands-on experience building, testing, and hardening distributed digital systems.
+      </p>
+    </header>
+
+    <!-- Narrative Section -->
+    <section class="prose prose-slate dark:prose-invert max-w-none text-sm sm:text-base leading-relaxed space-y-6">
+      
+      <div>
+        <h2 class="text-lg sm:text-xl font-semibold font-mono text-slate-900 dark:text-slate-100">
+          The Engineering Philosophy
+        </h2>
+        <p class="text-slate-600 dark:text-slate-300">
+          Throughout my career across Indonesian tech unicorns, regional media streaming giants, and core financial institutions, I've operated on one core principle:
+          <strong class="text-slate-900 dark:text-slate-100"> Quality is not an afterthought or a final manual check — it is an architectural property built into the system.</strong>
+        </p>
+        <p class="text-slate-600 dark:text-slate-300">
+          When an order is placed during an aggressive live-shopping flash sale, or when a high-value interbank transaction is processed, failure isn't just a bug ticket; it's lost customer trust, inventory discrepancies, and direct revenue leakage. My focus has been engineering resilient distributed architectures, idempotent workflows, and automated verification loops that make system failures obvious before production deployment.
+        </p>
+      </div>
+
+      <!-- Domain Trajectory -->
+      <div class="pt-4">
+        <h2 class="text-lg sm:text-xl font-semibold font-mono text-slate-900 dark:text-slate-100">
+          Domain Experience & Trajectory
+        </h2>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 not-prose my-4">
+          <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622]">
+            <div class="text-xs font-mono text-blue-600 dark:text-blue-400 font-semibold">01 / RETAIL & OMNICHANNEL</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-slate-100 mt-1">Eigerindo MPI (EIGER)</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Leading TikTok Shop order fulfillment migration to CARE, architecting blind stock reconciliation for retail handhelds, and driving automated performance gates with k6.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622]">
+            <div class="text-xs font-mono text-blue-600 dark:text-blue-400 font-semibold">02 / E-COMMERCE AT SCALE</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-slate-100 mt-1">Bukalapak</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Standardized SDET test automation for search, checkout, and merchant tooling. Cut test execution time from 40 minutes to sub-5 minutes across parallel CI runners.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622]">
+            <div class="text-xs font-mono text-blue-600 dark:text-blue-400 font-semibold">03 / STREAMING & REAL-TIME MEDIA</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-slate-100 mt-1">Vidio & BBM (BlackBerry Messenger)</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Engineered end-to-end streaming latency benchmarks, automated video playback test grids, and social feed performance validations for tens of millions of MAUs.
+            </p>
+          </div>
+
+          <div class="p-4 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622]">
+            <div class="text-xs font-mono text-blue-600 dark:text-blue-400 font-semibold">04 / CORE BANKING & FINTECH</div>
+            <div class="text-sm font-semibold text-slate-900 dark:text-slate-100 mt-1">Aprisma Indonesia & SDP</div>
+            <p class="text-xs text-slate-600 dark:text-slate-400 mt-1.5 leading-relaxed">
+              Verified mission-critical interbank funds transfer protocols, ISO8583 banking switches, and high-security enterprise internet banking channels.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Core Tenets -->
+      <div class="pt-4">
+        <h2 class="text-lg sm:text-xl font-semibold font-mono text-slate-900 dark:text-slate-100">
+          Core Operating Tenets
+        </h2>
+        <ul class="space-y-3 not-prose text-xs sm:text-sm">
+          <li class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622]">
+            <strong class="font-mono text-slate-900 dark:text-slate-100 block mb-0.5">1. Decoupled Systems Over Tight Monoliths</strong>
+            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              When capturing orders or processing webhooks, ingestion must be lightweight, persistent, and decoupled from heavy downstream processing via message brokers and idempotency layers.
+            </span>
+          </li>
+          <li class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622]">
+            <strong class="font-mono text-slate-900 dark:text-slate-100 block mb-0.5">2. Latency Budgets As Gating Checks</strong>
+            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              If an endpoint exceeds its p95 response time SLA under realistic load simulations (k6), the build does not pass. Performance regressions are treated with the same severity as logical bugs.
+            </span>
+          </li>
+          <li class="p-3.5 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622]">
+            <strong class="font-mono text-slate-900 dark:text-slate-100 block mb-0.5">3. High Empathy & Clear Documentation</strong>
+            <span class="text-slate-600 dark:text-slate-400 leading-relaxed">
+              Senior engineering means elevating the entire team. Architecture Decision Records (ADRs), post-mortems without blame, and clear automation guides ensure knowledge is organizational, not tribal.
+            </span>
+          </li>
+        </ul>
+      </div>
+
+    </section>
+
+    <!-- Quick Navigation to Experience -->
+    <div class="pt-6 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs font-mono">
+      <a href="/" class="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100">← Back to Overview</a>
+      <a href="/experience" class="text-blue-600 dark:text-blue-400 hover:underline">Explore Career Chronology →</a>
+    </div>
+
+  </div>
+</Layout>

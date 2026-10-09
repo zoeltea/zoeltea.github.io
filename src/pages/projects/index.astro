@@ -1,0 +1,52 @@
+---
+// src/pages/projects/index.astro
+import Layout from '../../layouts/Layout.astro';
+import ProjectCard from '../../components/ProjectCard.astro';
+import { getCollection } from 'astro:content';
+
+const allProjects = await getCollection('projects');
+const sortedProjects = allProjects.sort((a, b) => a.data.order - b.data.order);
+
+const categories = [
+  'All',
+  'Platform & Core Backend',
+  'SDET & Automation Architecture',
+  'E-Commerce Infrastructure',
+  'Fintech & Payments',
+];
+---
+
+<Layout
+  title="Projects & Architectural Case Studies"
+  description="In-depth technical case studies by Zul Yatman covering TikTok Shop order migration, distributed k6 performance suites, and core banking switches."
+>
+  <div class="space-y-10 max-w-4xl mx-auto">
+    
+    <!-- Header -->
+    <header class="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <div class="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+        Architecture & Systems Case Studies
+      </div>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+        Selected Engineering Projects
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans max-w-3xl">
+        A deep dive into system designs, latency optimization benchmarks, and quality engineering initiatives implemented in production.
+      </p>
+    </header>
+
+    <!-- Projects Grid -->
+    {sortedProjects.length > 0 ? (
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {sortedProjects.map((project) => (
+          <ProjectCard project={project} detailed={true} />
+        ))}
+      </div>
+    ) : (
+      <div class="p-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622] text-sm text-slate-500 font-mono text-center">
+        No case studies found. Check back soon.
+      </div>
+    )}
+
+  </div>
+</Layout>

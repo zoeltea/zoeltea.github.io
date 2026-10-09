@@ -1,0 +1,75 @@
+---
+// src/pages/notes/index.astro
+import Layout from '../../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const notes = await getCollection('notes');
+const sortedNotes = notes.sort((a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf());
+---
+
+<Layout
+  title="Engineering Notes & Architecture Deep Dives"
+  description="Technical essays, architectural reflections, and testing post-mortems by Zul Yatman."
+>
+  <div class="space-y-10 max-w-3xl mx-auto">
+    
+    <!-- Header -->
+    <header class="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <div class="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+        Engineering Journal
+      </div>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+        Technical Notes & Post-Mortems
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+        Practical observations, performance analysis patterns, and quality engineering strategies learned in production trenches.
+      </p>
+    </header>
+
+    <!-- Notes List -->
+    {sortedNotes.length > 0 ? (
+      <div class="divide-y divide-slate-100 dark:divide-slate-800">
+        {sortedNotes.map((note) => (
+          <article class="py-6 group">
+            <div class="space-y-2">
+              <div class="flex items-center gap-3 text-xs font-mono text-slate-400">
+                <time datetime={note.data.pubDate.toISOString()}>
+                  {note.data.pubDate.toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric',
+                  })}
+                </time>
+                <span>•</span>
+                <span>{note.data.readingTime}</span>
+              </div>
+
+              <h2 class="text-lg sm:text-xl font-semibold text-slate-900 dark:text-slate-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">
+                <a href={`/notes/${note.slug}`}>
+                  {note.data.title}
+                </a>
+              </h2>
+
+              <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+                {note.data.description}
+              </p>
+
+              <div class="flex flex-wrap gap-1.5 pt-2">
+                {note.data.tags.map((tag) => (
+                  <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400">
+                    #{tag}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </article>
+        ))}
+      </div>
+    ) : (
+      <div class="p-8 rounded-lg border border-slate-200 dark:border-slate-800 bg-white dark:bg-[#111622] text-sm text-slate-500 font-mono text-center">
+        No notes published yet. Check back soon.
+      </div>
+    )}
+
+  </div>
+</Layout>

@@ -1,0 +1,97 @@
+---
+// src/pages/projects/[...slug].astro
+import { getCollection, type CollectionEntry } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  const projects = await getCollection('projects');
+  return projects.map((project) => ({
+    params: { slug: project.slug },
+    props: { project },
+  }));
+}
+
+interface Props {
+  project: CollectionEntry<'projects'>;
+}
+
+const { project } = Astro.props;
+const { data, render } = project;
+const { Content } = await render();
+---
+
+<Layout
+  title={`${data.title} — Engineering Case Study`}
+  description={data.description}
+  type="article"
+>
+  <article class="max-w-3xl mx-auto space-y-8">
+    
+    <!-- Breadcrumb & Back -->
+    <div class="flex items-center justify-between text-xs font-mono text-slate-500">
+      <a href="/projects" class="hover:text-slate-900 dark:hover:text-slate-100 flex items-center gap-1">
+        <span>←</span>
+        <span>Back to all projects</span>
+      </a>
+      <span>{data.period}</span>
+    </div>
+
+    <!-- Article Header -->
+    <header class="space-y-4 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <div class="inline-flex items-center gap-2 px-2 py-0.5 rounded text-xs font-mono bg-blue-50 dark:bg-blue-950/50 text-blue-700 dark:text-blue-300 border border-blue-200 dark:border-blue-900">
+        <span class="w-1.5 h-1.5 rounded-full bg-blue-500"></span>
+        <span>{data.category}</span>
+      </div>
+
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+        {data.title}
+      </h1>
+
+      <p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans">
+        {data.description}
+      </p>
+
+      <!-- Key Outcomes Box -->
+      {data.impactMetrics && data.impactMetrics.length > 0 && (
+        <div class="p-4 rounded-lg bg-slate-50 dark:bg-[#111622] border border-slate-200 dark:border-slate-800 space-y-2">
+          <div class="text-xs font-mono font-semibold text-slate-700 dark:text-slate-300 uppercase tracking-wider">
+            Verified Business & Technical Outcomes
+          </div>
+          <ul class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            {data.impactMetrics.map((metric) => (
+              <li class="text-xs font-mono text-slate-700 dark:text-slate-300 flex items-start gap-2">
+                <span class="text-emerald-500 font-bold shrink-0">✓</span>
+                <span>{metric}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
+      <!-- Technology Stack -->
+      <div class="flex flex-wrap gap-1.5 pt-2">
+        {data.stack.map((tech) => (
+          <span class="px-2.5 py-1 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800 text-slate-700 dark:text-slate-300 border border-slate-200 dark:border-slate-700">
+            {tech}
+          </span>
+        ))}
+      </div>
+    </header>
+
+    <!-- Case Study Body -->
+    <div class="prose prose-slate dark:prose-invert max-w-none text-sm sm:text-base leading-relaxed">
+      <Content />
+    </div>
+
+    <!-- Navigation Footer -->
+    <div class="pt-8 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-xs font-mono">
+      <a href="/projects" class="text-blue-600 dark:text-blue-400 hover:underline">
+        ← Back to Projects Index
+      </a>
+      <a href="/experience" class="text-slate-500 hover:text-slate-900 dark:hover:text-slate-100">
+        View Career History →
+      </a>
+    </div>
+
+  </article>
+</Layout>

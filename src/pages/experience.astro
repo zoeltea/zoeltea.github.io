@@ -1,0 +1,41 @@
+---
+// src/pages/experience.astro
+import Layout from '../layouts/Layout.astro';
+import ExperienceItem from '../components/ExperienceItem.astro';
+import { getCollection } from 'astro:content';
+
+const experiences = await getCollection('experience');
+const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout
+  title="Career Experience & Technical Impact"
+  description="Chronological engineering career history of Zul Yatman — leadership, architecture, and impact across Eiger, Bukalapak, Vidio, BBM, Aprisma, and SDP."
+>
+  <div class="space-y-10 max-w-4xl mx-auto">
+    
+    <!-- Page Header -->
+    <header class="space-y-3 border-b border-slate-200 dark:border-slate-800 pb-6">
+      <div class="text-xs font-mono text-blue-600 dark:text-blue-400 uppercase tracking-wider">
+        Engineering Track Record
+      </div>
+      <h1 class="text-2xl sm:text-3xl md:text-4xl font-bold tracking-tight text-slate-900 dark:text-slate-100">
+        Career History & Impact
+      </h1>
+      <p class="text-sm sm:text-base text-slate-600 dark:text-slate-300 leading-relaxed font-sans max-w-3xl">
+        Over 10 years driving software engineering quality, microservice migrations, and distributed automation frameworks for enterprise and hyper-growth tech environments.
+      </p>
+    </header>
+
+    <!-- Career Timeline -->
+    <div class="relative pt-2">
+      {sortedExperiences.map((exp, index) => (
+        <ExperienceItem
+          experience={exp}
+          isLast={index === sortedExperiences.length - 1}
+        />
+      ))}
+    </div>
+
+  </div>
+</Layout>

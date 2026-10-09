@@ -1,0 +1,75 @@
+---
+// ExperienceItem.astro
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  experience: CollectionEntry<'experience'>;
+  isLast?: boolean;
+}
+
+const { experience, isLast = false } = Astro.props;
+const { data, render } = experience;
+const { Content } = await render();
+---
+
+<div class="relative pl-6 sm:pl-8 pb-10 group">
+  <!-- Timeline vertical line -->
+  {!isLast && (
+    <div class="absolute left-2.5 sm:left-3 top-4 bottom-0 w-px bg-slate-200 dark:bg-slate-800 group-hover:bg-blue-500/40 transition-colors"></div>
+  )}
+
+  <!-- Timeline node dot -->
+  <div class="absolute left-1 sm:left-1.5 top-1.5 w-3.5 h-3.5 rounded-full bg-slate-100 dark:bg-slate-900 border-2 border-slate-400 dark:border-slate-600 group-hover:border-blue-500 group-hover:bg-blue-500/10 transition-colors"></div>
+
+  <div class="space-y-3">
+    <!-- Header: Period, Company, Role, Location -->
+    <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between gap-1">
+      <div>
+        <h3 class="text-base sm:text-lg font-semibold text-slate-900 dark:text-slate-100">
+          {data.role}
+        </h3>
+        <div class="text-sm font-medium text-blue-600 dark:text-blue-400 flex items-center gap-2">
+          <span>{data.company}</span>
+          <span class="text-slate-400 dark:text-slate-600">•</span>
+          <span class="text-xs font-mono text-slate-500 dark:text-slate-400 font-normal">{data.type}</span>
+        </div>
+      </div>
+      <div class="text-xs font-mono text-slate-500 dark:text-slate-400 shrink-0">
+        <span>{data.period}</span>
+        <span class="mx-1.5">•</span>
+        <span>{data.location}</span>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <p class="text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+      {data.summary}
+    </p>
+
+    <!-- Highlights Bullet Points -->
+    {data.highlights && data.highlights.length > 0 && (
+      <ul class="space-y-1.5 pt-1">
+        {data.highlights.map((item) => (
+          <li class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 flex items-start gap-2">
+            <span class="text-blue-500 font-bold shrink-0 leading-5">›</span>
+            <span class="leading-relaxed">{item}</span>
+          </li>
+        ))}
+      </ul>
+    )}
+
+    <!-- Detailed Content Body (if available) -->
+    <div class="prose prose-sm dark:prose-invert max-w-none pt-2 text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+      <Content />
+    </div>
+
+    <!-- Tech Stack badges -->
+    <div class="pt-2 flex flex-wrap gap-1.5">
+      {data.stack.map((tech) => (
+        <span class="px-2 py-0.5 text-xs font-mono rounded bg-slate-100 dark:bg-slate-800/80 text-slate-600 dark:text-slate-400 border border-slate-200/60 dark:border-slate-800">
+          {tech}
+        </span>
+      ))}
+    </div>
+  </div>
+</div>

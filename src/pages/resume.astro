@@ -1,0 +1,125 @@
+---
+// src/pages/resume.astro
+import Layout from '../layouts/Layout.astro';
+import { getCollection } from 'astro:content';
+
+const experiences = await getCollection('experience');
+const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order);
+---
+
+<Layout
+  title="Resume & Curriculum Vitae"
+  description="Printable, web-optimized resume of Zul Yatman — Senior Software Engineer and QA Automation Architect."
+>
+  <div class="max-w-3xl mx-auto space-y-10">
+    
+    <!-- Action Bar (Print / PDF) -->
+    <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 print:hidden">
+      <div class="text-xs font-mono text-slate-500">
+        Web & Print Optimized Resume
+      </div>
+      <div class="flex items-center gap-3">
+        <button
+          onclick="window.print()"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 text-xs font-mono font-medium hover:opacity-90 transition-opacity"
+        >
+          <svg class="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z" />
+          </svg>
+          Print / Save PDF
+        </button>
+      </div>
+    </div>
+
+    <!-- Resume Header -->
+    <div class="space-y-3">
+      <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-slate-100 font-mono">
+        ZUL YATMAN
+      </h1>
+      <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 font-mono">
+        Senior Software Engineer & QA Automation Architect
+      </div>
+      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono text-slate-500 dark:text-slate-400">
+        <span>📍 Jakarta & Bandung, Indonesia</span>
+        <span>•</span>
+        <a href="mailto:contact@zulyatman.com" class="hover:underline">contact@zulyatman.com</a>
+        <span>•</span>
+        <a href="https://linkedin.com/in/zulyatman" target="_blank" class="hover:underline">linkedin.com/in/zulyatman</a>
+        <span>•</span>
+        <a href="https://github.com/zulyatman" target="_blank" class="hover:underline">github.com/zulyatman</a>
+      </div>
+    </div>
+
+    <!-- Summary -->
+    <section class="space-y-2">
+      <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        Executive Summary
+      </h2>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        Senior Software Engineer and QA Automation Architect with 10+ years of proven impact across e-commerce, core banking, media streaming, and retail. Specialized in building decoupled order ingestion engines, distributed k6 performance benchmarking suites, and zero-defect CI/CD pipelines. Expert in Go, Node.js/TypeScript, Redis, and high-concurrency automated quality frameworks.
+      </p>
+    </section>
+
+    <!-- Experience Section -->
+    <section class="space-y-4">
+      <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        Professional Experience
+      </h2>
+
+      <div class="space-y-6">
+        {sortedExperiences.map((exp) => (
+          <div class="space-y-1.5">
+            <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between text-xs sm:text-sm">
+              <div>
+                <span class="font-bold text-slate-900 dark:text-slate-100">{exp.data.role}</span>
+                <span class="text-slate-500"> — </span>
+                <span class="font-semibold text-blue-600 dark:text-blue-400">{exp.data.company}</span>
+              </div>
+              <div class="text-xs font-mono text-slate-500 shrink-0">
+                {exp.data.period} | {exp.data.location}
+              </div>
+            </div>
+
+            <p class="text-xs text-slate-600 dark:text-slate-300 leading-relaxed">
+              {exp.data.summary}
+            </p>
+
+            {exp.data.highlights && (
+              <ul class="space-y-1 pt-1">
+                {exp.data.highlights.map((h) => (
+                  <li class="text-xs text-slate-600 dark:text-slate-300 flex items-start gap-1.5">
+                    <span class="text-slate-400 font-bold">•</span>
+                    <span>{h}</span>
+                  </li>
+                ))}
+              </ul>
+            )}
+
+            <div class="text-[11px] font-mono text-slate-500 pt-1">
+              <strong class="text-slate-700 dark:text-slate-400">Tech Stack:</strong> {exp.data.stack.join(', ')}
+            </div>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="space-y-3">
+      <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        Technical Skills & Proficiencies
+      </h2>
+      <div class="space-y-2 text-xs font-mono">
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Languages & Runtimes:</strong> Go (Golang), TypeScript / JavaScript (Node.js), Java, SQL, Shell Scripting (Bash).
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Quality & Testing Architecture:</strong> k6, Playwright, Cypress, Appium, Espresso, RestAssured, Pact Contract Testing, Distributed Test Grids.
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Infrastructure & Data:</strong> Docker, Kubernetes, Redis, PostgreSQL, MySQL, RabbitMQ, Kafka, GitHub Actions, Prometheus, Grafana.
+        </div>
+      </div>
+    </section>
+
+  </div>
+</Layout>
