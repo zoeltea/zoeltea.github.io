@@ -4,7 +4,7 @@ role: "Software Quality Engineer"
 period: "2016 - 2018"
 location: "Jakarta, Indonesia"
 type: "Full-time"
-order: 4
+order: 5
 featured: false
 summary: "Delivered automated verification suites for real-time messaging, in-app payments, and social news feed components for 60M+ registered users across Southeast Asia."
 highlights:

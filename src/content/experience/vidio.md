@@ -4,7 +4,7 @@ role: "Senior QA Automation Engineer"
 period: "2018 - 2020"
 location: "Jakarta, Indonesia"
 type: "Full-time"
-order: 3
+order: 4
 featured: false
 summary: "Designed automated video playback validation, CDN failover test scenarios, and mobile app test automation across Android, iOS, and Web platforms for over 40M active viewers."
 highlights:
