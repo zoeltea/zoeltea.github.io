@@ -13,7 +13,7 @@ interface Props {
 
 const {
   title,
-  description = 'Zul Yatman — Senior Software Engineer & QA Automation Architect with 10+ years designing high-throughput order fulfillment, distributed testing, and core fintech services.',
+  description = 'Zul Yatman — Lead Test Engineer (SDET & Test Architecture) / Software Engineer with 10+ years designing high-throughput order fulfillment, distributed testing, and core fintech services.',
   image = '/og-image.png',
   type = 'website',
 } = Astro.props;
@@ -32,22 +32,22 @@ const canonicalURL = new URL(Astro.url.pathname, Astro.site || 'https://zoeltea.
     <meta name="generator" content={Astro.generator} />
 
     <!-- Primary Meta Tags -->
-    <title>{title ? `${title} | Zul Yatman` : 'Zul Yatman — Senior Software Engineer & QA Architect'}</title>
-    <meta name="title" content={title ? `${title} | Zul Yatman` : 'Zul Yatman — Senior Software Engineer & QA Architect'} />
+    <title>{title ? `${title} | Zul Yatman` : 'Zul Yatman — Lead Test Engineer (SDET & Test Architecture) / Software Engineer'}</title>
+    <meta name="title" content={title ? `${title} | Zul Yatman` : 'Zul Yatman — Lead Test Engineer (SDET & Test Architecture) / Software Engineer'} />
     <meta name="description" content={description} />
     <meta name="author" content="Zul Yatman" />
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content={type} />
     <meta property="og:url" content={canonicalURL} />
-    <meta property="og:title" content={title ? `${title} | Zul Yatman` : 'Zul Yatman — Senior Software Engineer & QA Architect'} />
+    <meta property="og:title" content={title ? `${title} | Zul Yatman` : 'Zul Yatman — Lead Test Engineer (SDET & Test Architecture) / Software Engineer'} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content={new URL(image, canonicalURL)} />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content={canonicalURL} />
-    <meta property="twitter:title" content={title ? `${title} | Zul Yatman` : 'Zul Yatman — Senior Software Engineer & QA Architect'} />
+    <meta property="twitter:title" content={title ? `${title} | Zul Yatman` : 'Zul Yatman — Lead Test Engineer (SDET & Test Architecture) / Software Engineer'} />
     <meta property="twitter:description" content={description} />
     <meta property="twitter:image" content={new URL(image, canonicalURL)} />
 
