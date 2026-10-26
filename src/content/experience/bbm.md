@@ -1,20 +1,22 @@
 ---
-company: "BBM (BlackBerry Messenger / Emtek)"
-role: "Software Quality Engineer"
-period: "2016 - 2018"
+company: "BBM (BlackBerry Messenger)"
+role: "Senior Software Development Engineer in Test (SDET)"
+period: "Jul 2018 – May 2019"
 location: "Jakarta, Indonesia"
 type: "Full-time"
 order: 6
 featured: false
-summary: "Delivered automated verification suites for real-time messaging, in-app payments, and social news feed components for 60M+ registered users across Southeast Asia."
+summary: "Built and maintained mobile test automation for an app with 60M+ registered users across Southeast Asia, covering instant messaging, multimedia attachments, and BBM Pay wallet transactions."
 highlights:
-  - "Built cross-platform automation tests for instant messaging protocols, multimedia attachment deliveries, and BBM Pay wallet transactions."
-  - "Established continuous load testing frameworks evaluating chat server socket connections under high-concurrency connection storms."
+  - "Built and maintained mobile test automation for an app with 60M+ registered users across Southeast Asia, covering instant messaging, multimedia attachments, and BBM Pay wallet transactions."
+  - "Set up continuous load testing of chat server socket connections under high-concurrency connection storms."
+  - "Configured Jenkins CI for scheduled test runs and paired with developers."
 stack:
   - "Java"
   - "Appium"
-  - "JMeter"
+  - "Robot Framework"
+  - "Apache JMeter"
   - "TestNG"
+  - "Jenkins"
   - "Git"
-  - "Jira"
 ---

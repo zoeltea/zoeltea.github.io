@@ -1,17 +1,17 @@
 ---
 company: "Bukalapak"
 role: "Senior Software Engineer (Fintech & Commerce Systems)"
-period: "2023 - 2024"
-location: "Jakarta, Indonesia"
+period: "Oct 2023 – Dec 2024"
+location: "Bandung / Jakarta, Indonesia"
 type: "Full-time"
 order: 3
 featured: true
 summary: "Core engineer for financial calculation engines, dynamic fee computation, and high-frequency digital goods checkout pipelines across Bukalapak & Lapakgaming."
 highlights:
-  - "Architected and delivered the Dynamic Service Fee engine, executing sub-15ms multi-rule fee evaluations for millions of daily active transactions across varied merchant categories."
-  - "Refactored checkout and payment reconciliation workflows for Lapakgaming, reducing end-to-end checkout API latency from ~40s under high voucher load down to ~5s ($87.5\\%$ reduction)."
-  - "Engineered automated real-time cashback calculation pipelines supporting granular promotion matrices, multi-tiered buyer loyalty programs, and fraud prevention locks."
-  - "Eliminated critical concurrency race conditions during flash promo redemption using distributed lock leases and optimistic concurrency control in MySQL/PostgreSQL."
+  - "Built and maintained the Dynamic Service Fee engine across Desktop, Mobile Web, Android, iOS, and Mitra Bukalapak, a core revenue stream with sub-15ms multi-rule evaluation."
+  - "Optimized product retrieval and checkout APIs in the Lapakgaming Reseller System, cutting latency from ~40s to ~5s (87.5% reduction)."
+  - "Built Cashback and Mix-Payment transaction mechanisms for the Lapakgaming platform."
+  - "Wrote technical RFCs, architecture flowcharts, and sequence diagrams for new transactional features."
 stack:
   - "Ruby on Rails"
   - "Go"

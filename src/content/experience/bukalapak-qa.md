@@ -1,18 +1,18 @@
 ---
 company: "Bukalapak"
-role: "Lead Software Quality Assurance / SDET"
-period: "2020 - 2023"
+role: "Lead QA / Test Engineer (SDET & Test Architecture)"
+period: "Jun 2020 – Apr 2024"
 location: "Bandung / Jakarta, Indonesia"
 type: "Full-time"
 order: 4
 featured: true
 summary: "Spearheaded test architecture, developer self-service automation tooling, API security signature mocking, and CI/CD quality gate enforcement across Bukalapak payment and transaction tribes."
 highlights:
-  - "Re-architected core E2E testing framework with parallelized container execution on Kubernetes, slashing full regression pipeline time from 40 minutes to under 5 minutes."
-  - "Built an internal developer-centric HMAC signature generation and payload tampering platform, saving 150+ monthly engineering hours for team members testing signed banking API webhooks."
-  - "Stabilized and refactored flaky test automation suites across Android, iOS, and Mitra Bukalapak apps."
-  - "Constructed automated Slack-integrated regression dashboards and failure triaging bots, reporting real-time smoke and regression status directly into squad deployment pipelines."
-  - "Championed the 'Shift-Left' testing culture, mentoring 35+ backend and frontend engineers in authoring resilient contract and integration test suites."
+  - "Re-architected the core E2E test framework with parallelized container execution on Kubernetes, cutting full regression time from 40 minutes to under 5 minutes (85%+ reduction)."
+  - "Built an internal HMAC signature generation and payload tampering tool, saving 150+ engineering hours per month for teams testing signed banking API webhooks."
+  - "Stabilized and refactored flaky automation suites across Android, iOS, and Mitra Bukalapak apps."
+  - "Built Slack-integrated regression dashboards and failure triage bots that report smoke and regression status into squad deployment pipelines."
+  - "Mentored 35+ engineers in writing contract and integration tests through workshops and documentation."
 stack:
   - "Go"
   - "TypeScript"
@@ -20,6 +20,7 @@ stack:
   - "Playwright"
   - "Python"
   - "k6"
+  - "Appium"
   - "Docker"
   - "Kubernetes"
   - "GitLab CI"

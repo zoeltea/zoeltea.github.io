@@ -1,15 +1,17 @@
 ---
-company: "Aprisma Indonesia & Smart Data Provider (SDP)"
-role: "Core Banking Systems QA Engineer"
-period: "2013 - 2016"
+company: "PT Aprisma Indonesia"
+role: "Quality Assurance Engineer & Java Developer"
+period: "Aug 2015 – Jun 2018"
 location: "Jakarta, Indonesia"
 type: "Full-time"
 order: 7
 featured: false
-summary: "Conducted security, ISO8583 banking switch, and transaction protocol verification for tier-1 national and commercial banking institutions across Indonesia."
+summary: "Tested core banking systems for national and commercial banks (QA Engineer) and built banking software modules in Java (Java Developer)."
 highlights:
-  - "Verified ISO8583 interbank funds transfer message framing, transaction rollbacks, and ATM/EDC switch integrations."
-  - "Validated multi-tier enterprise Internet Banking platforms (corporate & retail cash management) for compliance and transaction security standards."
+  - "Tested core banking systems for national and commercial banks: functional, mobile/web integration, and direct database transaction verification."
+  - "Verified ISO8583 interbank transfer messages, transaction rollbacks, and ATM / EDC switch integrations."
+  - "Wrote test plans, test cases, release sign-off documents, and SOPs."
+  - "Built banking software modules in Java and fixed critical defects in backend transaction processing services (Aug 2015 – Nov 2015)."
 stack:
   - "Java"
   - "ISO8583"

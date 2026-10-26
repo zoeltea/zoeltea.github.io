@@ -9,14 +9,14 @@ const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order
 
 <Layout
   title="Resume & Curriculum Vitae"
-  description="Printable, web-optimized ATS resume of Zul Yatman — Lead Test Engineer (SDET & Test Architecture) / Software Engineer."
+  description="Printable, web-optimized ATS resume of Zul Yatman — Lead Test Engineer (SDET & Test Architecture) | Software Engineer."
 >
   <div class="max-w-3xl mx-auto space-y-10">
     
     <!-- Action Bar (Print / PDF) -->
     <div class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 pb-4 print:hidden">
       <div class="text-xs font-mono text-slate-500">
-        Web & Print Optimized Resume
+        Web & Print Optimized ATS Resume
       </div>
       <div class="flex items-center gap-3">
         <button
@@ -37,16 +37,20 @@ const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order
         ZUL YATMAN
       </h1>
       <div class="text-sm font-semibold text-blue-600 dark:text-blue-400 font-mono">
-        Lead Test Engineer (SDET & Test Architecture) / Software Engineer
+        Lead Test Engineer (SDET & Test Architecture) | Software Engineer
       </div>
-      <div class="flex flex-wrap items-center gap-x-4 gap-y-1 text-xs font-mono text-slate-500 dark:text-slate-400">
-        <span>📍 Jakarta & Bandung, Indonesia</span>
+      <div class="flex flex-wrap items-center gap-x-3 gap-y-1 text-xs font-mono text-slate-500 dark:text-slate-400">
+        <span>📍 Bandung, West Java, Indonesia</span>
         <span>•</span>
         <a href="mailto:zoeltea@gmail.com" class="hover:underline">zoeltea@gmail.com</a>
+        <span>•</span>
+        <a href="tel:+6281281892166" class="hover:underline">+6281281892166</a>
         <span>•</span>
         <a href="https://www.linkedin.com/in/zul-yatman" target="_blank" class="hover:underline">linkedin.com/in/zul-yatman</a>
         <span>•</span>
         <a href="https://github.com/zoeltea" target="_blank" class="hover:underline">github.com/zoeltea</a>
+        <span>•</span>
+        <a href="https://zoeltea.github.io/resume" target="_blank" class="hover:underline">zoeltea.github.io/resume</a>
       </div>
     </div>
 
@@ -56,8 +60,47 @@ const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order
         Professional Summary
       </h2>
       <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
-        Lead Test Engineer and Software Engineer with 10+ years of proven impact architecting automated quality engineering frameworks, distributed performance testing suites, and core backend services across omnichannel retail, e-commerce, fintech, media streaming, and core banking. Expert in Go, Python, TypeScript/Node.js, Java, SQL, Redis, distributed k6 performance benchmarking, and zero-defect CI/CD pipelines.
+        Lead Test Engineer (SDET & Test Architecture) and Software Engineer with 11+ years of experience building automated test frameworks, performance testing suites, and high-concurrency backend services in e-commerce, omnichannel retail, fintech, media streaming, and core banking in Indonesia.
       </p>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        Currently leads quality engineering at EIGER: automated validation for the TikTok Shop order migration from UFFOS to CARE (68% lower sync latency, zero dropped orders) and distributed k6 load testing at 10,000+ RPM. Previously at Bukalapak (4.5 years) as Lead QA / Test Engineer and then Senior Software Engineer: cut regression time by 85%+ with Kubernetes parallelization, built the sub-15ms Dynamic Service Fee engine, and reduced Lapakgaming checkout API latency by 87.5%.
+      </p>
+      <p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300 leading-relaxed">
+        Works in Go, Python, TypeScript/Node.js, Ruby on Rails, and Java. Has mentored 35+ engineers and applies agentic AI workflows (Model Context Protocol, MCP) to test generation and regression root-cause analysis.
+      </p>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="space-y-3">
+      <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        Core Skills
+      </h2>
+      <div class="space-y-2 text-xs font-mono">
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Languages:</strong> Go, Python, TypeScript, JavaScript (Node.js), Java, Ruby (Ruby on Rails), SQL, Bash.
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Test Automation & Architecture:</strong> Playwright, Cypress, Robot Framework, Appium, Selenium, TestNG, Postman / Newman, Contract Testing, Shift-Left Quality Gates.
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Performance Testing:</strong> k6 (distributed), Locust, Apache JMeter, High-Concurrency Benchmarking (10,000+ RPM), Bottleneck Analysis.
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Backend & Distributed Systems:</strong> REST APIs, gRPC, Microservices, Event-Driven Architecture, Kafka, Webhooks, Idempotency, HMAC Signature Verification.
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">AI-Augmented Engineering:</strong> Agentic AI Workflows, Model Context Protocol (MCP), Autonomous Test Execution, Automated Regression Triage.
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Databases:</strong> PostgreSQL, MySQL, Oracle DB, Redis Cluster, SQLite.
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">DevOps & CI/CD:</strong> Docker, Kubernetes, GitLab CI, GitHub Actions, Jenkins, Datadog, Linux.
+        </div>
+        <div>
+          <strong class="text-slate-800 dark:text-slate-200">Domains:</strong> Omnichannel Retail (POS / OMS), E-Commerce, Fintech & Payments, Core Banking (ISO8583), Video Streaming (DRM, HLS, DASH).
+        </div>
+      </div>
     </section>
 
     <!-- Experience Section -->
@@ -72,7 +115,7 @@ const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order
             <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between text-xs sm:text-sm">
               <div>
                 <span class="font-bold text-slate-900 dark:text-slate-100">{exp.data.role}</span>
-                <span class="text-slate-500"> — </span>
+                <span class="text-slate-500">, </span>
                 <span class="font-semibold text-blue-600 dark:text-blue-400">{exp.data.company}</span>
               </div>
               <div class="text-xs font-mono text-slate-500 shrink-0">
@@ -96,34 +139,41 @@ const sortedExperiences = experiences.sort((a, b) => a.data.order - b.data.order
             )}
 
             <div class="text-[11px] font-mono text-slate-500 pt-1">
-              <strong class="text-slate-700 dark:text-slate-400">Tech Stack:</strong> {exp.data.stack.join(', ')}
+              <strong class="text-slate-700 dark:text-slate-400">Tools:</strong> {exp.data.stack.join(', ')}
             </div>
           </div>
         ))}
       </div>
     </section>
 
-    <!-- Skills Section -->
-    <section class="space-y-3">
+    <!-- Education Section -->
+    <section class="space-y-2">
       <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
-        Core Competencies & Technical Skills
+        Education & Training
       </h2>
-      <div class="space-y-2 text-xs font-mono">
-        <div>
-          <strong class="text-slate-800 dark:text-slate-200">Programming Languages:</strong> Go (Golang), Python, Java, TypeScript, JavaScript, SQL, Bash.
+      <div class="space-y-2 text-xs sm:text-sm">
+        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between">
+          <span class="font-semibold text-slate-800 dark:text-slate-200">
+            Bachelor of Computer Science, Informatics Engineering — Universitas Pasundan
+          </span>
+          <span class="text-xs font-mono text-slate-500">2006 – 2012 | Bandung, Indonesia</span>
         </div>
-        <div>
-          <strong class="text-slate-800 dark:text-slate-200">Test Automation & QA Architecture:</strong> Playwright, Cypress, Appium, Robot Framework, Selenium, Postman / Newman, Contract Testing, Table-Driven Testing.
+        <div class="flex flex-col sm:flex-row sm:items-baseline sm:justify-between text-xs font-mono text-slate-600 dark:text-slate-400">
+          <span>ISTQB (Software Testing) Seminar and Practical Workshop</span>
+          <span class="text-slate-500">PT Aprisma Indonesia</span>
         </div>
-        <div>
-          <strong class="text-slate-800 dark:text-slate-200">Performance & Load Testing:</strong> k6 (Distributed Load Testing), Locust, JMeter, Concurrency and Bottleneck Analysis, Latency Budgeting.
-        </div>
-        <div>
-          <strong class="text-slate-800 dark:text-slate-200">Backend, Storage & CI/CD:</strong> RESTful APIs, gRPC, Microservices, Event-Driven Architecture, Webhooks, Idempotency Engines, Docker, Kubernetes, Redis, PostgreSQL, MySQL, Kafka, RabbitMQ, GitLab CI, GitHub Actions.
-        </div>
-        <div>
-          <strong class="text-slate-800 dark:text-slate-200">Leadership & Engineering Practices:</strong> QA Architecture, Shift-Left Culture, Developer Enablement, Technical RFCs, Squad Mentorship (35+ Engineers).
-        </div>
+      </div>
+    </section>
+
+    <!-- Languages -->
+    <section class="space-y-2">
+      <h2 class="text-xs font-mono font-bold uppercase tracking-wider text-slate-900 dark:text-slate-100 border-b border-slate-200 dark:border-slate-800 pb-1">
+        Languages
+      </h2>
+      <div class="text-xs font-mono text-slate-600 dark:text-slate-300 flex gap-4">
+        <span><strong class="text-slate-800 dark:text-slate-200">Indonesian:</strong> Native</span>
+        <span>•</span>
+        <span><strong class="text-slate-800 dark:text-slate-200">English:</strong> Professional Working Proficiency</span>
       </div>
     </section>
 

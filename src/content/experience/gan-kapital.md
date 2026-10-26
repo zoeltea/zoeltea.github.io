@@ -1,15 +1,15 @@
 ---
 company: "Gan Kapital"
-role: "Instructor QA"
+role: "Test Automation Instructor (QA Architecture & Engineering)"
 period: "Jun 2025"
-location: "Jakarta, Indonesia"
-type: "Full-time"
+location: "Jakarta, Indonesia (On-site)"
+type: "Contract"
 order: 2
 featured: false
-summary: "Conducted specialized Test Automation training sessions and practical curriculum delivery for the internal engineering team."
+summary: "Delivered specialized Test Automation and QA Architecture training for internal engineering squads."
 highlights:
-  - "Conducted specialized Test Automation training sessions for the company's internal engineering team."
-  - "Delivered practical curriculum on test script authoring, troubleshooting flaky tests, and implementing automation best practices in enterprise environments."
+  - "Delivered Test Automation and QA Architecture training to the company's internal engineering squads."
+  - "Covered modular test script design, eliminating flaky tests, and automated CI/CD quality gates."
 stack:
   - "Test Automation"
   - "QA Architecture"
