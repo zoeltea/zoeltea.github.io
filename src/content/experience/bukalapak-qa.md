@@ -4,7 +4,7 @@ role: "Lead Software Quality Assurance / SDET"
 period: "2020 - 2023"
 location: "Bandung / Jakarta, Indonesia"
 type: "Full-time"
-order: 3
+order: 4
 featured: true
 summary: "Spearheaded test architecture, developer self-service automation tooling, API security signature mocking, and CI/CD quality gate enforcement across Bukalapak payment and transaction tribes."
 highlights:

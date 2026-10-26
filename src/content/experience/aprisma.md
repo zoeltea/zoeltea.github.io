@@ -4,7 +4,7 @@ role: "Core Banking Systems QA Engineer"
 period: "2013 - 2016"
 location: "Jakarta, Indonesia"
 type: "Full-time"
-order: 6
+order: 7
 featured: false
 summary: "Conducted security, ISO8583 banking switch, and transaction protocol verification for tier-1 national and commercial banking institutions across Indonesia."
 highlights:

@@ -4,7 +4,7 @@ role: "Senior Software Engineer (Fintech & Commerce Systems)"
 period: "2023 - 2024"
 location: "Jakarta, Indonesia"
 type: "Full-time"
-order: 2
+order: 3
 featured: true
 summary: "Core engineer for financial calculation engines, dynamic fee computation, and high-frequency digital goods checkout pipelines across Bukalapak & Lapakgaming."
 highlights:

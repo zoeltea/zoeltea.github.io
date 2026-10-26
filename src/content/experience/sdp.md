@@ -4,7 +4,7 @@ role: "IT Specialist & System Engineer"
 period: "2011 - 2015"
 location: "Indonesia (Field & Regional Operations)"
 type: "Full-time"
-order: 7
+order: 8
 featured: false
 summary: "Managed real-time surface logging systems, high-reliability telemetry data acquisition, and remote network infrastructure across offshore/onshore oil and gas drilling operations."
 highlights:
